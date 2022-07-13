@@ -5,13 +5,14 @@ import { HttpClient ,HttpBackend, HttpResponse } from '@angular/common/http'
   providedIn: 'root'
 })
 export class SignupService {
+  baseUri: string = '/api';
 
   constructor(private http:HttpClient) { }
 
   signUp(item:any)
   {   
     console.log(item);
-    return this.http.post<any>("http://localhost:5000/signup",{"signup":item})
+    return this.http.post<any>(`${this.baseUri}/signup`,{"signup":item})
   }
 
 }

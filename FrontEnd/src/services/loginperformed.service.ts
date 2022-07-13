@@ -5,12 +5,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginperformedService {
    loginPerformed = false;
+   baseUri: string = '/api';
 
   constructor(private http: HttpClient) { }
   login(item:any)
   {    
 
-      return this.http.post<any>("http://localhost:5000/login",{"login":item})
+      return this.http.post<any>(`${this.baseUri}/login`,{"login":item})
 
   }
 

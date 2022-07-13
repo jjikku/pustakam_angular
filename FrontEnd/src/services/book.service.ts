@@ -5,17 +5,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BookService {
+  baseUri: string = '/api';
 
   constructor(private http:HttpClient) { }
   getbooks()
   {   
     
-    return this.http.get("http://localhost:5000/books")
+    return this.http.get(`${this.baseUri}/books`)
 
   }
 
   getbook(id:any)
   {   
-    return this.http.get("http://localhost:5000/books/"+id);
+    return this.http.get(`${this.baseUri}/books/`+id);
   }
 }
