@@ -16,10 +16,9 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/public")));
-
 app.use("/login", loginRouter);
 app.use("/signup", signupRouter);
-// app.use("/home", homeRouter);
+app.use("/", homeRouter);
 app.use("/books", booksRouter);
 app.use("/singlebook", singleBookRouter);
 app.use("/editbook",editBooksRouter);
