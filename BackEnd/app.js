@@ -6,9 +6,9 @@ const loginRouter = require("./src/routes/loginroute");
 const signupRouter = require("./src/routes/signuproute");
 const homeRouter = require("./src/routes/homeroute");
 const booksRouter = require("./src/routes/booksroute");
-const editBooksRouter = require("./src/routes/editroute")
-const singleBookRouter = require("./src/routes/singlebookroute")
-require('dotenv').config();
+const editBooksRouter = require("./src/routes/editroute");
+const singleBookRouter = require("./src/routes/singlebookroute");
+require("dotenv").config();
 
 const app = new express();
 app.use(cors());
@@ -21,9 +21,9 @@ app.use("/signup", signupRouter);
 app.use("/", homeRouter);
 app.use("/books", booksRouter);
 app.use("/singlebook", singleBookRouter);
-app.use("/editbook",editBooksRouter);
+app.use("/editbook", editBooksRouter);
 
-const PORT = (process.env.PORT || 5000);
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
   console.log(`Server Ready on ${PORT}`);
